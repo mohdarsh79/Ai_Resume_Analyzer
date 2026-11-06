@@ -1,0 +1,15 @@
+streamlit
+pandas
+numpy
+plotly
+pdfplumber
+PyPDF2
+scikit-learn
+nltk
+spacy
+sentence-transformers
+huggingface-hub
+torch
+transformers
+openai
+python-dotenv
