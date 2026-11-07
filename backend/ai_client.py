@@ -33,7 +33,14 @@ def get_model_candidates() -> List[str]:
     elif "openai.com" in base_url:
         candidates = [active_model, "gpt-4o-mini", "gpt-4o"]
     elif "googleapis.com" in base_url:
-        candidates = [active_model, "gemini-3.8-flash", "gemini-3.7-flash"]
+        candidates = [
+            active_model,
+            "gemini-flash-lite-latest",
+            "gemini-3.5-flash-lite",
+            "gemini-3.8-flash",
+            "gemini-3.7-flash",
+            "gemini-flash-latest",
+        ]
     else:
         candidates = [
             active_model,
