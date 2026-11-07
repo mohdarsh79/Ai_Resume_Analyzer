@@ -18,7 +18,7 @@ def render_ranking_page():
         "Missing Skills", "Experience", "Education", "Email", "Phone"
     ]
     avail_cols = [c for c in display_cols if c in df.columns]
-    st.dataframe(df[avail_cols], use_container_width=True)
+    st.dataframe(df[avail_cols], width="stretch")
 
     csv = df[avail_cols].to_csv(index=True).encode("utf-8")
     st.download_button("📥 Download Ranking as CSV", data=csv, file_name="candidate_ranking.csv", mime="text/csv")

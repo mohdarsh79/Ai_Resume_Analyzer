@@ -28,7 +28,7 @@ def render_analytics_page():
             df, x="Candidate", y="Overall Score (%)", color="Overall Score (%)",
             color_continuous_scale="Blues", title="Overall Match Scores"
         )
-        st.plotly_chart(fig_bar, use_container_width=True)
+        st.plotly_chart(fig_bar, width="stretch")
 
     with col2:
         st.subheader("Skill Frequency")
@@ -40,7 +40,7 @@ def render_analytics_page():
         if all_matched:
             counts = pd.Series(all_matched).value_counts().head(10)
             fig_pie = px.pie(values=counts.values, names=counts.index, title="Top 10 Matched Skills")
-            st.plotly_chart(fig_pie, use_container_width=True)
+            st.plotly_chart(fig_pie, width="stretch")
         else:
             st.info("No matched skills found.")
 
@@ -56,6 +56,6 @@ def render_analytics_page():
             x=m_counts.values, y=m_counts.index, orientation="h",
             title="Top 10 Frequently Missing Skills", labels={"x": "Candidate Count", "y": "Skill"}
         )
-        st.plotly_chart(fig_missing, use_container_width=True)
+        st.plotly_chart(fig_missing, width="stretch")
     else:
         st.info("No missing skills found.")
